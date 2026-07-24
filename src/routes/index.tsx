@@ -41,7 +41,7 @@ function HomePage() {
           muted
           loop
           playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-20"
+          className="absolute inset-0 h-full w-full object-cover opacity-10"
         >
           <source src="/brand-film.mp4" type="video/mp4" />
         </video>
@@ -165,6 +165,50 @@ function HomePage() {
         </div>
       </Section>
 
+      {/* Visual Break / Showcase */}
+      <section className="relative py-24 overflow-hidden bg-brand-deep text-cream">
+        <div className="absolute inset-0 bg-hero-glow opacity-50" />
+        <div className="mx-auto max-w-[1200px] px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <Reveal>
+              <h2 className="font-display text-4xl md:text-5xl mb-6">Expertise you can count on.</h2>
+              <p className="text-cream/80 text-lg mb-8 leading-relaxed">
+                Whether you need straightforward monthly bookkeeping, complex bank reconciliations, or detailed financial statements, our experts ensure your records are pristine.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Dedicated bookkeeper & account manager",
+                  "Direct integration with your banks",
+                  "Detailed monthly reporting packages"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <div className="h-6 w-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                      <CheckCircle2 className="h-4 w-4" />
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="relative group perspective-1000">
+                <div className="rounded-2xl overflow-hidden border border-cream/20 shadow-2xl transition-transform duration-700 ease-out transform-gpu group-hover:rotate-y-12 group-hover:rotate-x-12 group-hover:scale-105 [transform-style:preserve-3d]">
+                  <img src="/images/expert_bookkeeping.jpg" alt="Expert Bookkeeping" className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/80 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 translate-z-10 [transform:translateZ(50px)]">
+                    <div className="bg-brand/80 backdrop-blur-md rounded-xl p-4 border border-cream/10 inline-block">
+                      <p className="font-display text-xl">Top Rated Accuracy</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-accent/30 rounded-full blur-3xl" />
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-gold opacity-20 blur-3xl animate-float-3d" />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* Trust Indicators - New Section */}
       <Section tone="sand">
         <div className="text-center mb-12">
@@ -241,13 +285,11 @@ function HomePage() {
                   ))}
                 </div>
               </div>
-              <div className="absolute -top-6 -right-6 h-24 w-24 rounded-2xl border border-border bg-card p-3 shadow-elegant animate-float-3d" style={{ animationDelay: "-2s" }}>
-                <div className="text-[10px] text-muted-foreground">Reconciled</div>
-                <div className="font-display text-2xl mt-1 gradient-text">100%</div>
+              <div className="absolute -top-10 -right-10 h-32 w-32 rounded-2xl overflow-hidden border border-border bg-card shadow-elegant animate-float-3d" style={{ animationDelay: "-2s" }}>
+                <img src="/images/monthly_bookkeeping.jpg" alt="Monthly Bookkeeping" className="w-full h-full object-cover opacity-80" />
               </div>
-              <div className="absolute -bottom-4 -left-4 h-20 rounded-2xl border border-border bg-card px-4 py-3 shadow-elegant animate-float-3d" style={{ animationDelay: "-4s" }}>
-                <div className="text-[10px] text-muted-foreground">On time</div>
-                <div className="font-display text-lg">Every month</div>
+              <div className="absolute -bottom-8 -left-8 h-28 w-28 rounded-2xl overflow-hidden border border-border bg-card shadow-elegant animate-float-3d" style={{ animationDelay: "-4s" }}>
+                <img src="/images/financial_statements.jpg" alt="Financial Statements" className="w-full h-full object-cover opacity-80" />
               </div>
             </div>
           </Reveal>

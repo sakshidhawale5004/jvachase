@@ -23,6 +23,7 @@ export function ServicePage({
   includes: string[];
   deliverables: string[];
   ideal: string;
+  image?: string;
 }) {
   return (
     <>
@@ -36,6 +37,13 @@ export function ServicePage({
             <div className="font-display italic text-accent mb-3">{num}</div>
             <h2 className="font-display text-4xl mb-5">Overview</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-10">{overview}</p>
+
+            {image && (
+              <div className="mb-10 rounded-2xl overflow-hidden shadow-elegant border border-border group relative">
+                <img src={image} alt={title} className="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+              </div>
+            )}
 
             <h3 className="font-display text-2xl mb-4">What's included</h3>
             <ul className="grid sm:grid-cols-2 gap-3 mb-10">

@@ -139,6 +139,16 @@ function PricingPage() {
             </Reveal>
           ))}
         </div>
+
+        <div className="mt-16 relative rounded-3xl overflow-hidden border border-border group">
+          <img src="/images/no_income_tax.jpg" alt="Cost Efficient Bookkeeping" className="w-full h-64 md:h-96 object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-deep/90 via-brand-deep/60 to-transparent flex items-center p-8 md:p-12">
+            <div className="max-w-md">
+              <h3 className="font-display text-3xl text-cream mb-4">Focus on growing, not accounting.</h3>
+              <p className="text-cream/80 text-lg">Leave the heavy lifting to us so you can make decisions based on clear, accurate data.</p>
+            </div>
+          </div>
+        </div>
       </Section>
 
       <Section tone="sand">

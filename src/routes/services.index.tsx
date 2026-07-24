@@ -30,18 +30,36 @@ function ServicesIndex() {
       <PageHero eyebrow="What We Do" title="Everything your books need —" emphasis="handled." lead="Six core service lines that cover recordkeeping, reporting, and readiness — from day one through year-end." />
       <Section>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <Reveal key={s.n} delay={i * 60}>
-              <Link to={s.to} className="card-tilt group block h-full rounded-2xl border border-border bg-card p-7">
-                <div className="font-display italic text-accent mb-3">{s.n}</div>
-                <h3 className="font-display text-xl mb-2 group-hover:text-brand transition">{s.t}</h3>
-                <p className="text-muted-foreground text-sm">{s.d}</p>
-                <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand">
-                  Learn more <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+          {services.map((s, i) => {
+            const imageMap: Record<string, string> = {
+              "01": "/images/bookkeeping.jpg",
+              "02": "/images/bank_reconciliation.jpg",
+              "03": "/images/ap_ar_services.jpg",
+              "04": "/images/financial_statements.jpg",
+              "05": "/images/struggling_receipts.jpg",
+              "06": "/images/tax_software.jpg"
+            };
+            const image = imageMap[s.n];
+
+            return (
+              <Reveal key={s.n} delay={i * 60}>
+                <Link to={s.to} className="card-tilt group block h-full rounded-2xl border border-border bg-card overflow-hidden flex flex-col">
+                  <div className="h-48 overflow-hidden relative border-b border-border">
+                    <img src={image} alt={s.t} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                  </div>
+                  <div className="p-7 flex flex-col flex-1">
+                    <div className="font-display italic text-accent mb-3">{s.n}</div>
+                    <h3 className="font-display text-xl mb-2 group-hover:text-brand transition">{s.t}</h3>
+                    <p className="text-muted-foreground text-sm flex-1">{s.d}</p>
+                    <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand">
+                      Learn more <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
       <CTASection />

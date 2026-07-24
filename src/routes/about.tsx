@@ -61,6 +61,32 @@ function AboutPage() {
         </div>
       </Section>
 
+      {/* Our Story with Image */}
+      <Section tone="sand">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <Reveal delay={100}>
+            <div className="relative group">
+              <div className="rounded-2xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                <img src="/images/bookkeeper_thoughts.jpg" alt="A Bookkeeper's Thoughts" className="w-full h-auto object-cover" />
+              </div>
+              <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-xl overflow-hidden border-4 border-sand shadow-lg hidden md:block">
+                <img src="/images/accounting_services.jpg" alt="Accounting Services" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </Reveal>
+          <Reveal>
+            <p className="text-eyebrow mb-4">Behind the Numbers</p>
+            <h2 className="font-display text-4xl mb-6">More than just data entry.</h2>
+            <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+              We take pride in turning chaotic receipts and scattered spreadsheets into coherent, reliable financial stories. By combining deep industry expertise with streamlined processes, we help founders reclaim their time.
+            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Our team consists of dedicated professionals who believe that accurate bookkeeping is the foundation of any successful business strategy.
+            </p>
+          </Reveal>
+        </div>
+      </Section>
+
       {/* Mission & Vision - New Section */}
       <Section tone="sand">
         <div className="max-w-4xl mx-auto">

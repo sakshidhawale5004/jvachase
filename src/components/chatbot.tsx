@@ -56,12 +56,15 @@ export function Chatbot() {
       <button
         onClick={() => setOpen((o) => !o)}
         className={cn(
-          "fixed bottom-6 right-6 z-[60] grid h-14 w-14 place-items-center rounded-full bg-brand-deep text-accent-soft shadow-elegant transition hover:-translate-y-1 hover:shadow-glow",
+          "fixed bottom-6 right-6 z-[60] grid h-14 w-14 place-items-center rounded-full bg-brand-deep text-accent-soft shadow-elegant transition hover:-translate-y-1 hover:shadow-glow group",
           open && "rotate-90",
         )}
         aria-label="Open chat"
       >
-        {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+        {!open && (
+          <span className="absolute inline-flex h-full w-full rounded-full bg-brand opacity-20 group-hover:animate-ping"></span>
+        )}
+        {open ? <X className="relative z-10 h-6 w-6" /> : <MessageCircle className="relative z-10 h-6 w-6" />}
       </button>
 
       {open && (

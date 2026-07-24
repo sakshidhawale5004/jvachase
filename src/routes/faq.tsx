@@ -115,6 +115,16 @@ function FAQPage() {
             );
           })}
         </div>
+        
+        <div className="mt-20 max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-border relative">
+          <img src="/images/taxes_retirement.jpg" alt="Tax and Retirement Planning" className="w-full h-64 md:h-80 object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-deep to-transparent flex items-end p-8">
+            <div className="max-w-xl">
+              <h3 className="font-display text-2xl text-cream mb-2">Still have questions?</h3>
+              <p className="text-cream/80 text-lg">We understand that every business is unique. Reach out to our team to discuss your specific needs.</p>
+            </div>
+          </div>
+        </div>
       </Section>
       <CTASection />
     </>

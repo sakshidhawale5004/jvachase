@@ -32,7 +32,8 @@ export const Route = createFileRoute("/services/monthly-bookkeeping")({
         "Executive summary of notable movements",
         "Documented month-end procedures",
       ]}
-      ideal="Growing businesses that need consistent, dependable books without hiring in-house."
+      ideal="Growing businesses that need reliable, accurate financial records without the overhead of an in-house team."
+      image="/images/bookkeeping.jpg"
     />
   ),
 });

@@ -51,6 +51,15 @@ function ContactPage() {
                 </div>
               ))}
             </div>
+            
+            <div className="mt-12 max-w-sm rounded-2xl overflow-hidden shadow-elegant border border-cream/10 relative group">
+              <img src="/images/green_revolution.jpg" alt="Dedicated Support" className="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-brand-deep/30 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute bottom-4 left-4 right-4 bg-brand/90 backdrop-blur-md rounded-xl p-3 text-sm text-cream border border-cream/10">
+                <span className="block font-semibold mb-1">Always Here to Help</span>
+                Our team is ready to provide tailored financial solutions for your business.
+              </div>
+            </div>
           </Reveal>
 
           <Reveal delay={80}>

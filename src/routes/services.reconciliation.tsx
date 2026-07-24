@@ -31,7 +31,8 @@ export const Route = createFileRoute("/services/reconciliation")({
         "List of resolved discrepancies and open items",
         "Clean, tie-out-ready balance sheet",
       ]}
-      ideal="Businesses with multiple accounts, high transaction volumes, or historical inaccuracies."
+      ideal="Businesses with high transaction volumes, multiple bank accounts, or those who have previously struggled with unrecorded transactions."
+      image="/images/bank_reconciliation.jpg"
     />
   ),
 });
