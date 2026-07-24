@@ -13,6 +13,7 @@ export function ServicePage({
   includes,
   deliverables,
   ideal,
+  image,
 }: {
   num: string;
   eyebrow: string;
