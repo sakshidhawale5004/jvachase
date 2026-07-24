@@ -134,8 +134,7 @@ function HomePage() {
               <Reveal key={s.n} delay={i * 60}>
                 <Link to={s.to} className="card-tilt group block h-full rounded-2xl border border-border bg-card overflow-hidden flex flex-col">
                   <div className="h-48 overflow-hidden relative border-b border-border">
-                    <img src={image} alt={s.t} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                    <img src={image} alt={s.t} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-7 flex flex-col flex-1">
                     <div className="font-display italic text-accent mb-3">{s.n}</div>
