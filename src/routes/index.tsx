@@ -39,16 +39,11 @@ function HomePage() {
         <video
           autoPlay
           muted
+          loop
           playsInline
           className="absolute inset-0 h-full w-full object-cover opacity-100"
-          onTimeUpdate={(e) => {
-            if (e.currentTarget.currentTime >= 7) {
-              e.currentTarget.currentTime = 0;
-              e.currentTarget.play();
-            }
-          }}
         >
-          <source src="/brand-film.mp4" type="video/mp4" />
+          <source src="/newvideoforherosection.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-br from-brand-deep/70 via-brand-deep/60 to-brand-deep/70" />
         <div className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40 w-full">
