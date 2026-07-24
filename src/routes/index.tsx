@@ -41,11 +41,11 @@ function HomePage() {
           muted
           loop
           playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-10"
+          className="absolute inset-0 h-full w-full object-cover opacity-100"
         >
           <source src="/brand-film.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-deep/95 via-brand-deep/85 to-brand-deep/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-deep/70 via-brand-deep/60 to-brand-deep/70" />
         <div className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40 w-full">
           <p className="text-eyebrow text-accent-soft mb-5 animate-reveal">Bookkeeping · Tax-ready · Stress-free</p>
           <h1 className="font-display text-5xl md:text-[5.5rem] leading-[1.02] max-w-[15ch] font-normal animate-reveal" style={{ animationDelay: "80ms" }}>
@@ -119,18 +119,36 @@ function HomePage() {
       <Section tone="sand">
         <SectionHead eyebrow="What We Do" title="Everything your books need — handled." lead="From day-to-day recordkeeping to a clean hand-off at tax time." />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <Reveal key={s.n} delay={i * 50}>
-              <Link to={s.to} className="card-tilt group block h-full rounded-2xl border border-border bg-card p-7">
-                <div className="font-display italic text-accent text-base mb-3">{s.n}</div>
-                <h3 className="font-display text-xl mb-2 group-hover:text-brand transition">{s.t}</h3>
-                <p className="text-muted-foreground text-sm">{s.d}</p>
-                <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand">
-                  Learn more <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+          {services.map((s, i) => {
+            const imageMap: Record<string, string> = {
+              "01": "/images/bookkeeping.jpg",
+              "02": "/images/bank_reconciliation.jpg",
+              "03": "/images/ap_ar_services.jpg",
+              "04": "/images/financial_statements.jpg",
+              "05": "/images/struggling_receipts.jpg",
+              "06": "/images/tax_software.jpg"
+            };
+            const image = imageMap[s.n];
+
+            return (
+              <Reveal key={s.n} delay={i * 60}>
+                <Link to={s.to} className="card-tilt group block h-full rounded-2xl border border-border bg-card overflow-hidden flex flex-col">
+                  <div className="h-48 overflow-hidden relative border-b border-border">
+                    <img src={image} alt={s.t} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                  </div>
+                  <div className="p-7 flex flex-col flex-1">
+                    <div className="font-display italic text-accent mb-3">{s.n}</div>
+                    <h3 className="font-display text-xl mb-2 group-hover:text-brand transition">{s.t}</h3>
+                    <p className="text-muted-foreground text-sm flex-1">{s.d}</p>
+                    <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand">
+                      Learn more <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 
