@@ -16,22 +16,25 @@ export const Route = createFileRoute("/services/sales-tax-year-end")({
       eyebrow="Service · 06"
       title="Sales Tax"
       emphasis="& Year-End."
-      lead="Sales tax prepared and filed, plus a clean year-end package handed straight to your CPA or tax preparer."
-      overview="We handle the two most stressful compliance moments of the year: sales tax deadlines and the annual close. Your CPA gets a defensible, reconciled package; you get zero last-minute surprises."
+      lead="Sales tax prepared and filed accurately, plus a pristine year-end package handed straight to your CPA."
+      overview="We take on the two most stressful compliance moments of the year: confusing multi-state sales tax deadlines and the intense annual close process. Navigating nexus thresholds and varied tax rates across states can be a nightmare for growing e-commerce or SaaS companies. We calculate and file your sales tax accurately and on time. At year-end, we handle the heavy lifting of adjusting entries, depreciation schedules, and 1099 filings. Your CPA receives a fully defensible, reconciled trial balance, and you get zero last-minute tax surprises."
       includes={[
-        "Multi-state sales tax filing",
-        "Nexus review",
-        "1099 preparation & filing",
-        "Year-end close & adjusting entries",
-        "Fixed asset & depreciation schedules",
-        "CPA-ready trial balance & workpapers",
+        "Multi-state sales tax calculation and scheduled filing",
+        "Continuous economic and physical nexus review",
+        "W-9 tracking and automated 1099 preparation & filing",
+        "Year-end close procedures and complex adjusting entries",
+        "Fixed asset tracking and depreciation schedule management",
+        "Direct collaboration and communication with your CPA",
+        "CPA-ready trial balance & comprehensive workpapers"
       ]}
       deliverables={[
-        "Filed sales tax returns per state",
-        "1099 filings for eligible vendors",
-        "Year-end financial package for tax prep",
+        "Successfully filed sales tax returns per jurisdiction",
+        "Completed 1099 filings for all eligible vendors/contractors",
+        "Comprehensive year-end financial package for tax prep",
+        "Detailed audit trail and supporting documentation"
       ]}
-      ideal="Businesses with multi-state exposure, contractor-heavy vendor bases, or upcoming filing deadlines."
+      ideal="E-commerce companies, SaaS businesses with multi-state exposure, operations heavily reliant on independent contractors, or anyone wanting a stress-free tax season."
+      image="/images/tax_software.jpg"
     />
   ),
 });

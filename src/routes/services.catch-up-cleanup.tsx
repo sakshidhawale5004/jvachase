@@ -17,21 +17,24 @@ export const Route = createFileRoute("/services/catch-up-cleanup")({
       title="Catch-Up"
       emphasis="& Cleanup."
       lead="Behind on your books? We organize months — or years — of backlog and get you tax-ready, then keep you current."
-      overview="Whether you're 3 months behind or 3 years behind, we build a cleanup plan that reconciles historical periods, corrects miscategorizations, ties out balances, and produces defensible statements you can hand to a CPA or lender."
+      overview="Falling behind on accounting is incredibly common, but the resulting blind spots can cripple your business decisions and invite massive tax liabilities. Whether you're 3 months behind due to rapid growth or 3 years behind due to neglect, we build a customized, rapid-response cleanup plan. We diligently reconstruct and reconcile historical periods, correct miscategorizations, untangle commingled personal/business expenses, tie out balances, and produce defensible, accurate statements. We turn a stressful backlog into a clean slate."
       includes={[
-        "Historical transaction categorization",
-        "Multi-period bank & card reconciliation",
-        "Chart of accounts restructuring",
-        "Duplicate & error correction",
-        "Opening balance validation",
-        "Turnover to ongoing monthly service",
+        "Comprehensive historical transaction categorization",
+        "Multi-period bank, credit card, and merchant account reconciliation",
+        "Strategic chart of accounts restructuring",
+        "Duplicate entry detection and error correction",
+        "Opening balance validation and tie-out",
+        "Commingled expense separation (business vs. personal)",
+        "Seamless turnover to ongoing monthly bookkeeping"
       ]}
       deliverables={[
-        "Restored historical financial statements",
-        "Reconciled accounts through cleanup period",
-        "CPA-ready tax package for prior years",
+        "Fully restored and accurate historical financial statements",
+        "Reconciled accounts through the entire cleanup period",
+        "Detailed diagnostic report explaining what went wrong and how to prevent it",
+        "CPA-ready tax package for all prior years involved"
       ]}
-      ideal="Owners facing a tax deadline with messy or missing books, or coming off a bookkeeper who fell behind."
+      ideal="Business owners facing an impending tax deadline with messy or missing books, founders trying to secure financing, or companies transitioning away from a bookkeeper who fell behind."
+      image="/images/struggling_receipts.jpg"
     />
   ),
 });

@@ -16,22 +16,25 @@ export const Route = createFileRoute("/services/ap-ar")({
       eyebrow="Service · 03"
       title="Accounts Payable"
       emphasis="& Receivable."
-      lead="Stay on top of what you owe and what's owed to you — with cash flow as the guiding metric."
-      overview="We manage the day-to-day rhythm of money in and money out: entering bills, scheduling payments, sending invoices, following up on receivables, and reconciling vendor and customer accounts."
+      lead="Stay on top of what you owe and what's owed to you — with positive cash flow as the guiding metric."
+      overview="We manage the day-to-day rhythm of money in and money out. Unpaid invoices can strangle a growing business, while unorganized payables can lead to missed discounts or damaged vendor relationships. We take over the entire process: entering bills, scheduling and routing approvals for payments, generating and sending customer invoices, persistently following up on outstanding receivables, and keeping both vendor and customer sub-ledgers perfectly reconciled. The result is optimized working capital and a clear picture of your cash position at all times."
       includes={[
-        "Vendor bill entry & approvals",
-        "Payment scheduling & runs",
-        "Customer invoicing",
-        "Collections follow-up",
-        "AR/AP aging reports",
-        "1099 tracking",
+        "Vendor bill entry, categorization & digital document storage",
+        "Multi-tier payment approval routing and scheduling",
+        "Customer invoice generation & distribution",
+        "Automated and manual collections follow-up workflows",
+        "Continuous AR/AP aging analysis",
+        "W-9 collection and comprehensive 1099 tracking",
+        "Vendor statement reconciliation"
       ]}
       deliverables={[
-        "Weekly cash requirements report",
-        "Aging summaries by vendor/customer",
-        "Reconciled AP and AR sub-ledgers",
+        "Weekly cash requirements and projected cash flow reports",
+        "Detailed aging summaries organized by vendor and customer",
+        "Fully reconciled AP and AR sub-ledgers tied to the balance sheet",
+        "Year-end 1099 preparation and filing support"
       ]}
-      ideal="Service businesses, agencies, and any operation with recurring vendors and customers."
+      ideal="Service businesses, creative agencies, contractors, and any operation juggling multiple recurring vendors and a high volume of customer invoices."
+      image="/images/ap_ar_services.jpg"
     />
   ),
 });

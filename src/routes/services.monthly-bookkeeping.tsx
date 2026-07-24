@@ -16,23 +16,26 @@ export const Route = createFileRoute("/services/monthly-bookkeeping")({
       eyebrow="Service · 01"
       title="Monthly"
       emphasis="Bookkeeping."
-      lead="Continuous, accurate books — categorized, reconciled, and reported every month."
-      overview="We keep your books current so decisions and tax filings are never held up by missing data. Every month we categorize transactions, reconcile every account, review anomalies, and deliver a full financial reporting package."
+      lead="Continuous, accurate books — categorized, reconciled, and reported every month so you can run your business with confidence."
+      overview="We keep your books current so decisions and tax filings are never held up by missing data. Every month, our U.S.-based team meticulously categorizes your transactions, reconciles every bank and credit card account, reviews for anomalies, and delivers a full financial reporting package. You’ll never have to wonder where your cash went or if your margins are shrinking. We build a standardized process around your business, ensuring that your financial data is not just a compliance requirement, but a strategic asset."
       includes={[
-        "Transaction categorization",
-        "Chart of accounts maintenance",
-        "Bank & credit card reconciliation",
-        "Accrual or cash-basis bookkeeping",
-        "QuickBooks Online or Xero maintenance",
-        "Month-end close checklist",
+        "Transaction categorization (up to custom granular levels)",
+        "Chart of accounts maintenance & optimization",
+        "Bank & credit card reconciliation for all accounts",
+        "Accrual or cash-basis bookkeeping methodology",
+        "QuickBooks Online or Xero setup and ongoing maintenance",
+        "Month-end close checklist tailored to your operations",
+        "Dedicated account manager for direct communication",
+        "Receipt and expense documentation management"
       ]}
       deliverables={[
-        "Monthly close report (usually within 10 business days)",
-        "P&L, balance sheet, and cash flow statement",
-        "Executive summary of notable movements",
-        "Documented month-end procedures",
+        "Monthly close report (delivered within 10 business days of month-end)",
+        "Detailed P&L, balance sheet, and cash flow statement",
+        "Executive summary highlighting notable movements and trends",
+        "Documented month-end procedures for full transparency",
+        "Year-end tax-ready package delivered directly to your CPA"
       ]}
-      ideal="Growing businesses that need reliable, accurate financial records without the overhead of an in-house team."
+      ideal="Growing businesses, startups, and established companies that need highly reliable, accurate financial records without the overhead, management burden, or expense of an in-house accounting team."
       image="/images/bookkeeping.jpg"
     />
   ),

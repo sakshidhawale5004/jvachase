@@ -16,22 +16,25 @@ export const Route = createFileRoute("/services/financial-statements")({
       eyebrow="Service · 04"
       title="Financial"
       emphasis="Statements."
-      lead="Monthly P&L, balance sheet, and cash flow — delivered clearly, with insight into what the numbers mean."
-      overview="Statements are the output; understanding is the point. Each month you receive a polished reporting package alongside a short executive summary explaining what changed, why, and what to watch."
+      lead="Monthly P&L, balance sheet, and cash flow reports — delivered clearly, with deep insight into what the numbers actually mean for your future."
+      overview="Accurate statements are just the output; actionable understanding is the point. Every month, you receive a meticulously polished reporting package alongside a concise, easy-to-read executive summary. We don't just hand you a spreadsheet—we highlight what changed from the previous month, explain the 'why' behind the variances, and flag potential cash flow or margin issues before they become crises. We transform raw data into a narrative you can use to steer your company."
       includes={[
-        "Profit & loss (income statement)",
-        "Balance sheet",
-        "Cash flow statement",
-        "Budget vs. actual comparisons",
-        "Departmental / class-based reporting",
-        "Executive summary commentary",
+        "Detailed Profit & Loss (Income Statement)",
+        "Comprehensive Balance Sheet",
+        "Statement of Cash Flows (Direct or Indirect)",
+        "Budget vs. Actual variance analysis",
+        "Departmental, project, or class-based segmented reporting",
+        "Custom KPI tracking and visual dashboards",
+        "Monthly video or written executive summary commentary"
       ]}
       deliverables={[
-        "Monthly PDF reporting package",
-        "Interactive dashboard access (optional)",
-        "Trend charts across periods",
+        "Monthly highly-formatted PDF reporting package",
+        "Interactive digital dashboard access for real-time tracking",
+        "Trend charts comparing performance across multiple periods",
+        "Quarterly strategic review meetings (optional)"
       ]}
-      ideal="Owners and leadership teams who want to make decisions from real numbers, not gut feel."
+      ideal="Business owners, CEOs, and leadership teams who want to transition from making decisions based on 'gut feel' to executing strategies driven by real, defensible financial data."
+      image="/images/financial_statements.jpg"
     />
   ),
 });

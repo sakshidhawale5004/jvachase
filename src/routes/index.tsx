@@ -39,9 +39,14 @@ function HomePage() {
         <video
           autoPlay
           muted
-          loop
           playsInline
           className="absolute inset-0 h-full w-full object-cover opacity-100"
+          onTimeUpdate={(e) => {
+            if (e.currentTarget.currentTime >= 7) {
+              e.currentTarget.currentTime = 0;
+              e.currentTarget.play();
+            }
+          }}
         >
           <source src="/brand-film.mp4" type="video/mp4" />
         </video>
