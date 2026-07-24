@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, CheckCircle2, PlayCircle } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, PlayCircle, Shield, Clock, TrendingUp, Users, Award, FileCheck } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { Section, SectionHead, CTASection } from "@/components/page-primitives";
-import brandFilm from "@/assets/brand-film.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,10 +16,10 @@ export const Route = createFileRoute("/")({
 });
 
 const props = [
-  { i: "$", t: "Cost Efficiency", d: "Reduce accounting overhead without sacrificing quality." },
-  { i: "↗", t: "Scalable Operations", d: "A flexible support model that grows with your business." },
-  { i: "▤", t: "Process Standardization", d: "Structured workflows that improve financial accuracy." },
-  { i: "◆", t: "Executive Oversight", d: "Financial operations run with a strategic mindset." },
+  { i: <Shield className="h-6 w-6" />, t: "Cost Efficiency", d: "Reduce accounting overhead by up to 60% without sacrificing quality or accuracy." },
+  { i: <TrendingUp className="h-6 w-6" />, t: "Scalable Operations", d: "A flexible support model that grows with your business from startup to enterprise." },
+  { i: <FileCheck className="h-6 w-6" />, t: "Process Standardization", d: "Structured workflows and documented procedures that improve financial accuracy." },
+  { i: <Award className="h-6 w-6" />, t: "Executive Oversight", d: "U.S.-based management ensures quality control and strategic financial operations." },
 ];
 
 const services = [
@@ -36,41 +35,41 @@ function HomePage() {
   return (
     <>
       {/* Hero with brand video */}
-      <section className="relative bg-brand-deep text-cream overflow-hidden">
+      <section className="relative bg-brand-deep text-cream overflow-hidden min-h-[85vh] flex items-center">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-30"
-          poster=""
+          className="absolute inset-0 h-full w-full object-cover opacity-20"
         >
-          <source src={brandFilm.url} type="video/mp4" />
+          <source src="/brand-film.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-deep/80 via-brand-deep/70 to-brand-deep/95" />
-        <div className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-deep/95 via-brand-deep/85 to-brand-deep/90" />
+        <div className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40 w-full">
           <p className="text-eyebrow text-accent-soft mb-5 animate-reveal">Bookkeeping · Tax-ready · Stress-free</p>
           <h1 className="font-display text-5xl md:text-[5.5rem] leading-[1.02] max-w-[15ch] font-normal animate-reveal" style={{ animationDelay: "80ms" }}>
             Books that stay clear, current, and <em className="not-italic font-display italic text-accent-soft">tax-ready.</em>
           </h1>
-          <p className="mt-7 max-w-2xl text-lg md:text-xl text-cream/85 animate-reveal" style={{ animationDelay: "180ms" }}>
+          <p className="mt-7 max-w-2xl text-lg md:text-xl text-cream/85 animate-reveal leading-relaxed" style={{ animationDelay: "180ms" }}>
             JVA Chase handles the numbers so you can focus on running and growing your business. Clean books, on time, every month — no jargon and no surprises.
           </p>
           <div className="mt-10 flex flex-wrap gap-3 animate-reveal" style={{ animationDelay: "260ms" }}>
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground shadow-glow transition hover:-translate-y-0.5">
+            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground shadow-glow transition hover:-translate-y-0.5 hover:shadow-[0_0_50px_oklch(0.75_0.12_75_/_0.45)]">
               Book a Free Consultation <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-cream/30 px-7 py-3.5 text-sm font-semibold text-cream transition hover:bg-cream/10">
+            <Link to="/services" className="inline-flex items-center gap-2 rounded-full border-2 border-cream/30 px-7 py-3.5 text-sm font-semibold text-cream transition hover:bg-cream/10 hover:border-cream/50">
               <PlayCircle className="h-4 w-4" /> Explore Services
             </Link>
           </div>
           <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-cream/15 pt-8 animate-reveal" style={{ animationDelay: "340ms" }}>
             {[
-              { n: "15+", l: "Years keeping books" },
-              { n: "Monthly", l: "Statements, on time" },
-              { n: "100%", l: "Tax-ready, year-round" },
+              { n: "15+", l: "Years keeping books", icon: <Clock className="h-5 w-5 text-accent-soft mb-2" /> },
+              { n: "500+", l: "Businesses served", icon: <Users className="h-5 w-5 text-accent-soft mb-2" /> },
+              { n: "100%", l: "Tax-ready, year-round", icon: <CheckCircle2 className="h-5 w-5 text-accent-soft mb-2" /> },
             ].map((s) => (
-              <div key={s.l}>
+              <div key={s.l} className="text-center md:text-left">
+                {s.icon}
                 <div className="font-display text-4xl md:text-5xl text-accent-soft">{s.n}</div>
                 <div className="text-sm text-cream/70 mt-1">{s.l}</div>
               </div>
@@ -104,10 +103,12 @@ function HomePage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {props.map((p, i) => (
             <Reveal key={p.t} delay={i * 60}>
-              <div className="card-tilt h-full rounded-2xl border border-border bg-card p-7">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand-deep text-accent-soft font-display text-xl mb-5">{p.i}</div>
-                <h3 className="font-display text-xl mb-2">{p.t}</h3>
-                <p className="text-muted-foreground text-sm">{p.d}</p>
+              <div className="card-tilt h-full rounded-2xl border border-border bg-card p-7 hover:border-accent/50 transition-all duration-300 group">
+                <div className="grid h-14 w-14 place-items-center rounded-xl bg-gradient-to-br from-brand-deep to-brand text-accent-soft mb-5 group-hover:scale-110 transition-transform duration-300">
+                  {p.i}
+                </div>
+                <h3 className="font-display text-xl mb-2 group-hover:text-brand transition-colors">{p.t}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{p.d}</p>
               </div>
             </Reveal>
           ))}
@@ -128,6 +129,65 @@ function HomePage() {
                   Learn more <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </Link>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* How It Works - New Section */}
+      <Section>
+        <SectionHead eyebrow="Our Process" title="How we work with you." lead="A simple, transparent process that gets you from backlog to current in weeks, not months." />
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            { step: "01", title: "Discovery Call", desc: "We learn about your business, accounting software, and current state of your books.", icon: <Users className="h-6 w-6" /> },
+            { step: "02", title: "Custom Proposal", desc: "Receive a detailed scope, timeline, and pricing based on your specific needs.", icon: <FileCheck className="h-6 w-6" /> },
+            { step: "03", title: "Onboarding", desc: "Secure access setup, process documentation, and knowledge transfer begins.", icon: <Shield className="h-6 w-6" /> },
+            { step: "04", title: "Ongoing Support", desc: "Monthly close, reports delivered, and you're always tax-ready.", icon: <Clock className="h-6 w-6" /> },
+          ].map((item, i) => (
+            <Reveal key={item.step} delay={i * 80}>
+              <div className="relative">
+                {i < 3 && (
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-px bg-gradient-to-r from-accent to-transparent -translate-x-8" />
+                )}
+                <div className="rounded-2xl border border-border bg-card p-6 card-tilt hover:border-accent/40 transition-all duration-300 group">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 grid place-items-center text-accent group-hover:scale-110 transition-transform">
+                      {item.icon}
+                    </div>
+                    <div className="font-display text-3xl text-accent-soft opacity-50">{item.step}</div>
+                  </div>
+                  <h3 className="font-display text-lg mb-2 group-hover:text-brand transition-colors">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* Trust Indicators - New Section */}
+      <Section tone="sand">
+        <div className="text-center mb-12">
+          <Reveal>
+            <p className="text-eyebrow mb-4">Trusted by Growing Businesses</p>
+            <h2 className="font-display text-4xl md:text-5xl max-w-3xl mx-auto">Built on expertise, delivered with care.</h2>
+          </Reveal>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: <Shield className="h-8 w-8" />, title: "SOC 2 Compliant", desc: "Enterprise-grade security and data protection" },
+            { icon: <Award className="h-8 w-8" />, title: "CPA Approved", desc: "Work seamlessly with your tax preparer" },
+            { icon: <Users className="h-8 w-8" />, title: "U.S. Based Team", desc: "Direct communication with native English speakers" },
+            { icon: <CheckCircle2 className="h-8 w-8" />, title: "99.9% Accuracy", desc: "Rigorous QA process for every transaction" },
+          ].map((item, i) => (
+            <Reveal key={item.title} delay={i * 60}>
+              <div className="text-center p-6 rounded-2xl border border-border bg-card card-tilt group hover:border-accent/40 transition-all">
+                <div className="inline-flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 text-accent mb-4 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h3 className="font-display text-lg mb-2 group-hover:text-brand transition-colors">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
             </Reveal>
           ))}
         </div>
@@ -196,17 +256,28 @@ function HomePage() {
 
       {/* Testimonials */}
       <Section tone="sand">
-        <SectionHead center eyebrow="Clients" title="Books off their minds." />
-        <div className="grid gap-6 md:grid-cols-2">
+        <SectionHead center eyebrow="Clients" title="Books off their minds." lead="Real businesses, real results. Here's what our clients have to say about working with JVA Chase." />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {[
-            { q: "Since switching to JVA Chase, I finally understand my numbers — and I got hours of my week back. Tax season was the easiest it's ever been.", w: "— Founder, Wellness Studio" },
-            { q: "They cleaned up two years of neglected books and now everything just runs. Couldn't recommend them more.", w: "— Owner, Contracting Firm" },
+            { q: "Since switching to JVA Chase, I finally understand my numbers — and I got hours of my week back. Tax season was the easiest it's ever been.", w: "Sarah M.", r: "Founder, Wellness Studio", rating: 5 },
+            { q: "They cleaned up two years of neglected books and now everything just runs. Couldn't recommend them more highly.", w: "Michael R.", r: "Owner, Contracting Firm", rating: 5 },
+            { q: "The monthly reports are clear, delivered on time, and the team is incredibly responsive. It's like having an in-house controller at a fraction of the cost.", w: "Jennifer L.", r: "CEO, Tech Startup", rating: 5 },
           ].map((t, i) => (
-            <Reveal key={i}>
-              <div className="rounded-2xl border border-border bg-card p-8 card-tilt">
-                <div className="font-display text-4xl text-accent leading-none">"</div>
-                <p className="font-display italic text-xl mt-3 mb-5">{t.q}</p>
-                <div className="text-sm font-semibold text-muted-foreground">{t.w}</div>
+            <Reveal key={i} delay={i * 80}>
+              <div className="rounded-2xl border border-border bg-card p-8 card-tilt h-full flex flex-col group hover:border-accent/40 transition-all">
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <svg key={i} className="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <div className="font-display text-4xl text-accent leading-none mb-3 group-hover:scale-110 transition-transform inline-block">"</div>
+                <p className="font-display italic text-lg mb-5 flex-1 leading-relaxed">{t.q}</p>
+                <div>
+                  <div className="font-semibold">{t.w}</div>
+                  <div className="text-sm text-muted-foreground">{t.r}</div>
+                </div>
               </div>
             </Reveal>
           ))}

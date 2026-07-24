@@ -169,6 +169,49 @@
   }
 }
 
+/* Enhanced 3D Card */
+@utility card-3d {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, transparent 0%, oklch(0.65 0.13 65 / 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  &:hover {
+    transform: translateY(-12px) rotateX(4deg) scale(1.02);
+    box-shadow: 0 30px 80px -20px oklch(0.35 0.05 220 / 0.45);
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+/* Floating animation variants */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+@keyframes float-pulse {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-15px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@utility animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+@utility animate-float-pulse { animation: float-pulse 6s ease-in-out infinite; }
+
 @utility gradient-text {
   background: var(--gradient-gold);
   -webkit-background-clip: text;

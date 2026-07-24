@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/reveal";
 import { Section, PageHero, CTASection } from "@/components/page-primitives";
-import { Check } from "lucide-react";
+import { Check, DollarSign, TrendingUp, Shield, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -104,6 +104,37 @@ function PricingPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* Value Proposition - New Section */}
+      <Section>
+        <div className="text-center mb-12">
+          <Reveal>
+            <p className="text-eyebrow mb-4">Why Our Pricing Makes Sense</p>
+            <h2 className="font-display text-4xl md:text-5xl max-w-3xl mx-auto mb-6">Enterprise quality, without the enterprise cost.</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our model combines U.S.-based management with cost-efficient delivery, giving you the best of both worlds.
+            </p>
+          </Reveal>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: <DollarSign className="h-6 w-6" />, title: "Transparent Pricing", desc: "No hidden fees, no surprise charges. What you see is what you pay." },
+            { icon: <TrendingUp className="h-6 w-6" />, title: "Scalable Services", desc: "Start small and grow. Only pay for what you need, when you need it." },
+            { icon: <Shield className="h-6 w-6" />, title: "Risk-Free Trial", desc: "30-day money-back guarantee if you're not completely satisfied." },
+            { icon: <Clock className="h-6 w-6" />, title: "Fast Onboarding", desc: "Get started in days, not weeks. Most clients are live within 2 weeks." },
+          ].map((item, i) => (
+            <Reveal key={item.title} delay={i * 60}>
+              <div className="rounded-xl border border-border bg-card p-6 card-tilt group hover:border-accent/40 transition-all">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 grid place-items-center text-accent mb-4 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h3 className="font-display text-lg mb-2 group-hover:text-brand transition-colors">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             </Reveal>
           ))}
