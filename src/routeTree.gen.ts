@@ -16,7 +16,6 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesApArRouteImport } from './routes/services.ap-ar'
 import { Route as ServicesCatchUpCleanupRouteImport } from './routes/services.catch-up-cleanup'
@@ -58,11 +57,6 @@ const PricingRoute = PricingRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiChatRoute = ApiChatRouteImport.update({
-  id: '/api/chat',
-  path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
@@ -111,7 +105,6 @@ export interface FileRoutesByFullPath {
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
   '/services': typeof ServicesRouteWithChildren
-  '/api/chat': typeof ApiChatRoute
   '/services/ap-ar': typeof ServicesApArRoute
   '/services/catch-up-cleanup': typeof ServicesCatchUpCleanupRoute
   '/services/financial-statements': typeof ServicesFinancialStatementsRoute
@@ -127,7 +120,6 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
-  '/api/chat': typeof ApiChatRoute
   '/services/ap-ar': typeof ServicesApArRoute
   '/services/catch-up-cleanup': typeof ServicesCatchUpCleanupRoute
   '/services/financial-statements': typeof ServicesFinancialStatementsRoute
@@ -145,7 +137,6 @@ export interface FileRoutesById {
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
   '/services': typeof ServicesRouteWithChildren
-  '/api/chat': typeof ApiChatRoute
   '/services/ap-ar': typeof ServicesApArRoute
   '/services/catch-up-cleanup': typeof ServicesCatchUpCleanupRoute
   '/services/financial-statements': typeof ServicesFinancialStatementsRoute
@@ -164,7 +155,6 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/pricing'
     | '/services'
-    | '/api/chat'
     | '/services/ap-ar'
     | '/services/catch-up-cleanup'
     | '/services/financial-statements'
@@ -180,7 +170,6 @@ export interface FileRouteTypes {
     | '/faq'
     | '/onboarding'
     | '/pricing'
-    | '/api/chat'
     | '/services/ap-ar'
     | '/services/catch-up-cleanup'
     | '/services/financial-statements'
@@ -197,7 +186,6 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/pricing'
     | '/services'
-    | '/api/chat'
     | '/services/ap-ar'
     | '/services/catch-up-cleanup'
     | '/services/financial-statements'
@@ -215,7 +203,6 @@ export interface RootRouteChildren {
   OnboardingRoute: typeof OnboardingRoute
   PricingRoute: typeof PricingRoute
   ServicesRoute: typeof ServicesRouteWithChildren
-  ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -267,13 +254,6 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/chat': {
-      id: '/api/chat'
-      path: '/api/chat'
-      fullPath: '/api/chat'
-      preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/': {
@@ -360,7 +340,6 @@ const rootRouteChildren: RootRouteChildren = {
   OnboardingRoute: OnboardingRoute,
   PricingRoute: PricingRoute,
   ServicesRoute: ServicesRouteWithChildren,
-  ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

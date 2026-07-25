@@ -233,3 +233,15 @@
   to { transform: translateX(-50%); }
 }
 @utility animate-marquee { animation: marquee 30s linear infinite; }
+
+/* Glass panel */
+@utility glass-panel {
+  background: oklch(1 0 0 / 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(1 0 0 / 0.1);
+  box-shadow: 0 4px 30px oklch(0 0 0 / 0.1);
+}
+.dark .glass-panel {
+  background: oklch(0 0 0 / 0.2);
+  border: 1px solid oklch(1 1 1 / 0.05);
+}

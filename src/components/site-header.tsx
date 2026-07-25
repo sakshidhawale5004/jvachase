@@ -34,15 +34,16 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 border-b border-transparent backdrop-blur-md transition-all",
-        scrolled
-          ? "bg-background/85 border-border/60 shadow-[0_6px_24px_-18px_rgba(0,0,0,0.35)]"
-          : "bg-background/60",
-      )}
-    >
-      <div className="mx-auto flex h-[72px] max-w-[1200px] items-center justify-between px-6">
+    <div className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-500", scrolled ? "pt-4 px-4" : "pt-0 px-0")}>
+      <header
+        className={cn(
+          "mx-auto w-full max-w-[1200px] transition-all duration-500",
+          scrolled
+            ? "glass-panel rounded-full shadow-elegant bg-background/80"
+            : "bg-background/60 border-b border-transparent backdrop-blur-md"
+        )}
+      >
+        <div className={cn("flex items-center justify-between transition-all duration-500", scrolled ? "h-16 px-6" : "h-[72px] px-6")}>
         <Link to="/" className="flex items-center gap-2.5 font-display text-[1.35rem] font-semibold tracking-tight">
           <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand-deep text-accent-soft font-display text-base shadow-lg">
             J
@@ -116,6 +117,7 @@ export function SiteHeader() {
           </div>
         </div>
       )}
-    </header>
+      </header>
+    </div>
   );
 }
