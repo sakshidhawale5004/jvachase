@@ -1,7 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, CheckCircle2, PlayCircle, Shield, Clock, TrendingUp, Users, Award, FileCheck } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, CheckCircle2, PlayCircle, Shield, Clock, TrendingUp, Users, Award, FileCheck, Target, Plus, XCircle, DollarSign } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { Section, SectionHead, CTASection } from "@/components/page-primitives";
+import { cn } from "@/lib/utils";
+
+const faqs = [
+  { 
+    q: "How do we get started?", 
+    a: "Book a free 30-minute consultation. We'll review your current situation, discuss your pain points, recommend the right plan, and provide a detailed proposal. Most clients are fully onboarded and operational within 1-2 weeks." 
+  },
+  { 
+    q: "Do I need a bookkeeper if I already have a CPA?", 
+    a: "Yes — and they work better together. A bookkeeper keeps records accurate and current all year; your CPA uses those clean books to file taxes and advise on strategy." 
+  },
+  { 
+    q: "My books are a mess / I'm months behind. Can you help?", 
+    a: "Absolutely. Catch-up and cleanup work is one of our specialties. We'll build a detailed cleanup plan, reconcile everything, fix errors, and then transition you to ongoing monthly maintenance." 
+  },
+  { 
+    q: "Do you work with businesses outside the U.S.?", 
+    a: "Our practice focuses on U.S.-based businesses with U.S. entities. However, we can support U.S. subsidiaries of international parents or businesses with foreign transactions, as long as the primary entity is U.S.-based." 
+  }
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,6 +53,7 @@ const services = [
 ];
 
 function HomePage() {
+  const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
   return (
     <>
       {/* Hero with brand video */}
@@ -152,6 +174,61 @@ function HomePage() {
               <div className="absolute -z-10 top-1/2 -translate-y-1/2 -right-20 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px]" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* About Us / Company History Snippet */}
+      <Section tone="sand">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-[1200px] mx-auto px-6">
+          <Reveal>
+            <p className="text-eyebrow mb-4">Behind the Numbers</p>
+            <h2 className="font-display text-4xl mb-6">A U.S.-managed team of experienced finance professionals.</h2>
+            <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+              We believe business owners deserve to understand their own numbers without drowning in them. By combining deep industry expertise with streamlined processes, we help founders reclaim their time.
+            </p>
+            <Link to="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-brand transition-colors">
+              Learn more about us <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { t: "Accuracy first", d: "Every transaction reconciled, every category right. Books are only useful if they're correct.", icon: <Target className="h-5 w-5" /> },
+                { t: "Clarity over complexity", d: "We translate the numbers into language you can use to make decisions.", icon: <Users className="h-5 w-5" /> },
+              ].map((v) => (
+                <div key={v.t} className="card-tilt rounded-xl border border-border bg-card p-6 hover:border-accent/40 transition-all group">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 grid place-items-center text-accent group-hover:scale-110 transition-transform">
+                      {v.icon}
+                    </div>
+                    <h4 className="font-display text-lg text-brand">{v.t}</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{v.d}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* Software Integrations */}
+      <section className="py-24 bg-background border-t border-border overflow-hidden">
+        <div className="mx-auto max-w-[1200px] px-6 text-center mb-12">
+          <Reveal>
+            <h2 className="font-display text-3xl mb-4">Seamless Integrations</h2>
+            <p className="text-muted-foreground">We work with the tools you already use to keep your business running smoothly.</p>
+          </Reveal>
+        </div>
+        <div className="flex gap-12 whitespace-nowrap animate-marquee items-center opacity-70 hover:opacity-100 transition-opacity duration-500">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className="flex gap-16 pr-16 items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/QuickBooks_logo.svg" alt="QuickBooks" className="h-8 grayscale hover:grayscale-0 transition-all" />
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Xero_software_logo.svg/1200px-Xero_software_logo.svg.png" alt="Xero" className="h-8 grayscale hover:grayscale-0 transition-all" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gusto_logo_2019.svg/2560px-Gusto_logo_2019.svg.png" alt="Gusto" className="h-8 grayscale hover:grayscale-0 transition-all" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/2560px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe" className="h-8 grayscale hover:grayscale-0 transition-all" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/cb/Square_icon.svg/1200px-Square_icon.svg.png" alt="Square" className="h-8 grayscale hover:grayscale-0 transition-all" />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -316,6 +393,68 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Why Choose Us vs. Competitors */}
+      <Section tone="sand">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <SectionHead 
+            eyebrow="The JVA Chase Advantage" 
+            title="How we stack up." 
+            lead="Don't settle for neglected books or overpriced firms. We bridge the gap between quality and efficiency." 
+            center
+          />
+          
+          <div className="mt-16 grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Typical Freelancer",
+                desc: "Often a single point of failure. Limited capacity and variable quality control.",
+                features: ["Unpredictable availability", "No executive oversight", "Limited software expertise", "Often misses deadlines"],
+                icon: XCircle,
+                type: "negative"
+              },
+              {
+                title: "Traditional CPA Firm",
+                desc: "Expensive and focused mostly on tax filing, not day-to-day operations.",
+                features: ["High hourly rates", "Reactive, not proactive", "Slow communication", "Tax-focused, not ops-focused"],
+                icon: XCircle,
+                type: "negative"
+              },
+              {
+                title: "JVA Chase Bookkeeping",
+                desc: "U.S.-managed, tech-forward, and dedicated to clean books every month.",
+                features: ["U.S. Executive oversight", "Transparent flat pricing", "Proactive communication", "100% Tax-ready year-round"],
+                icon: CheckCircle2,
+                type: "positive"
+              }
+            ].map((c, i) => (
+              <Reveal key={c.title} delay={i * 100}>
+                <div className={cn(
+                  "h-full rounded-3xl p-8 border card-tilt relative overflow-hidden",
+                  c.type === "positive" 
+                    ? "bg-brand-deep text-cream border-transparent shadow-2xl md:scale-105 z-10" 
+                    : "bg-card border-border"
+                )}>
+                  {c.type === "positive" && (
+                    <div className="absolute top-0 right-0 left-0 h-1 bg-accent" />
+                  )}
+                  <h3 className="font-display text-2xl mb-3">{c.title}</h3>
+                  <p className={cn("text-sm mb-8 h-10", c.type === "positive" ? "text-cream/80" : "text-muted-foreground")}>{c.desc}</p>
+                  
+                  <ul className="space-y-4">
+                    {c.features.map((f, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-sm">
+                        <c.icon className={cn("h-5 w-5 shrink-0", c.type === "positive" ? "text-accent" : "text-muted-foreground/50")} />
+                        <span className={c.type === "positive" ? "text-cream" : "text-foreground/80"}>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* Testimonials */}
       <section className="bg-brand-deep text-cream py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 mix-blend-overlay" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'none\\' fill-rule=\\'evenodd\\'%3E%3Cg fill=\\'%23ffffff\\' fill-opacity=\\'1\\'%3E%3Cpath d=\\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }} />
@@ -359,6 +498,101 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Pricing Preview */}
+      <Section tone="sand">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <Reveal>
+              <p className="text-eyebrow mb-4">Transparent Pricing</p>
+              <h2 className="font-display text-4xl mb-6">Enterprise quality, without the enterprise cost.</h2>
+              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                Our model combines U.S.-based management with cost-efficient delivery, giving you the best of both worlds. No hidden fees, no surprise charges.
+              </p>
+              <ul className="space-y-4 mb-8">
+                {[
+                  "Dedicated accounting support team",
+                  "Monthly financial reporting package",
+                  "Standard operating procedures",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm font-medium">
+                    <div className="h-6 w-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                      <CheckCircle2 className="h-4 w-4" />
+                    </div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link to="/pricing" className="inline-flex items-center gap-2 rounded-full bg-brand text-cream px-7 py-3.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-brand-deep">
+                View Full Pricing Schedule <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="bg-brand-deep text-cream rounded-3xl p-10 card-tilt relative shadow-2xl border border-white/10">
+                <div className="absolute right-6 top-6 rounded-full bg-accent px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-accent-foreground">Most Popular</div>
+                <h3 className="font-display text-3xl mb-2">Essential Bookkeeping</h3>
+                <div className="text-cream/70 text-sm mb-8">Small businesses & startups</div>
+                <div className="mb-8">
+                  <div className="text-xs font-bold uppercase tracking-widest mb-1 text-cream/60">Starting at</div>
+                  <div className="font-display text-5xl text-accent-soft">
+                    $450 <span className="text-lg font-sans font-normal opacity-70">/ month</span>
+                  </div>
+                </div>
+                <ul className="space-y-3">
+                  {["Bank reconciliations", "Expense categorization", "Monthly P&L & balance sheet", "QuickBooks maintenance"].map((f) => (
+                    <li key={f} className="flex items-start gap-3 text-sm text-cream/85">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" /> {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </Section>
+
+      {/* FAQ Section */}
+      <Section>
+        <div className="max-w-[800px] mx-auto px-6">
+          <SectionHead 
+            center 
+            eyebrow="FAQ" 
+            title="Common questions." 
+          />
+          <div className="mt-12 border-t border-border">
+            {faqs.map((f, i) => {
+              const open = openFaqIdx === i;
+              return (
+                <Reveal key={f.q} delay={i * 30}>
+                  <div className="border-b border-border">
+                    <button
+                      onClick={() => setOpenFaqIdx(open ? null : i)}
+                      className="w-full flex items-center justify-between gap-4 py-6 text-left font-display text-xl hover:text-brand transition group"
+                    >
+                      <span className="flex-1">{f.q}</span>
+                      <span className={cn(
+                        "grid h-8 w-8 place-items-center rounded-full bg-secondary text-accent transition shrink-0",
+                        "group-hover:bg-accent/10 group-hover:scale-110",
+                        open && "rotate-45 bg-accent/10"
+                      )}>
+                        <Plus className="h-4 w-4" />
+                      </span>
+                    </button>
+                    <div className={cn("overflow-hidden transition-[max-height] duration-500", open ? "max-h-96" : "max-h-0")}>
+                      <p className="pb-6 text-muted-foreground leading-relaxed">{f.a}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+          <div className="text-center mt-10">
+            <Link to="/faq" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-brand transition-colors">
+              Read all FAQs <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </Section>
 
       <CTASection />
     </>
