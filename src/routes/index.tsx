@@ -212,13 +212,46 @@ function HomePage() {
               </div>
             </Link>
 
-            {/* Wide Service */}
-            <Link to="/services/catch-up-cleanup" className="md:col-span-2 relative rounded-3xl overflow-hidden group card-tilt">
-              <img src="/images/struggling_receipts.jpg" alt="Cleanup" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            {/* Standard Service 3 (AP & AR) */}
+            <Link to="/services/ap-ar" className="relative rounded-3xl overflow-hidden group card-tilt bg-card border border-border p-8 flex flex-col">
+              <div className="mb-auto">
+                <div className="h-12 w-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 text-accent">
+                  <FileCheck className="h-6 w-6" />
+                </div>
+                <h3 className="font-display text-2xl mb-2">AP & AR</h3>
+                <p className="text-muted-foreground text-sm">Stay on top of what you owe and what's owed to you without the manual data entry.</p>
+              </div>
+              <div className="mt-8 flex justify-between items-center text-accent group-hover:translate-x-1 transition-transform">
+                <span className="text-sm font-semibold">Explore</span>
+                <ArrowUpRight className="h-5 w-5" />
+              </div>
+            </Link>
+
+            {/* Standard Service 4 (Catch-Up & Cleanup) */}
+            <Link to="/services/catch-up-cleanup" className="relative rounded-3xl overflow-hidden group card-tilt bg-brand-deep text-cream p-8 flex flex-col">
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                <img src="/images/struggling_receipts.jpg" alt="Cleanup" className="w-full h-full object-cover" />
+              </div>
+              <div className="relative z-10 mb-auto">
+                <div className="h-12 w-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6 text-accent">
+                  <Shield className="h-6 w-6" />
+                </div>
+                <h3 className="font-display text-2xl mb-2">Catch-Up & Cleanup</h3>
+                <p className="text-cream/70 text-sm">Behind on your books? We organize months or years of backlog.</p>
+              </div>
+              <div className="relative z-10 mt-8 flex justify-between items-center group-hover:text-accent transition-colors">
+                <span className="text-sm font-semibold">Explore</span>
+                <ArrowUpRight className="h-5 w-5" />
+              </div>
+            </Link>
+
+            {/* Wide Service (Sales Tax & Year-End) */}
+            <Link to="/services/sales-tax-year-end" className="md:col-span-3 relative rounded-3xl overflow-hidden group card-tilt">
+              <img src="/images/tax_software.jpg" alt="Sales Tax" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
-              <div className="absolute inset-0 p-8 flex flex-col justify-center text-white w-2/3">
-                <h3 className="font-display text-3xl mb-3">Catch-Up & Cleanup</h3>
-                <p className="text-white/80 text-sm mb-6">Behind on your books? Don't stress. We organize months or even years of backlog to get you compliant and tax-ready fast.</p>
+              <div className="absolute inset-0 p-8 flex flex-col justify-center text-white w-full md:w-2/3">
+                <h3 className="font-display text-3xl mb-3">Sales Tax & Year-End</h3>
+                <p className="text-white/80 text-sm mb-6 max-w-lg">Sales tax filed accurately, plus a clean, comprehensive year-end package prepared for your CPA to make tax season completely stress-free.</p>
                 <div className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-white transition-colors">
                   Learn more <ArrowUpRight className="h-4 w-4" />
                 </div>
