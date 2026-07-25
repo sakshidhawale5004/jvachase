@@ -211,26 +211,7 @@ function HomePage() {
         </div>
       </Section>
 
-      {/* Software Integrations */}
-      <section className="py-24 bg-background border-t border-border overflow-hidden">
-        <div className="mx-auto max-w-[1200px] px-6 text-center mb-12">
-          <Reveal>
-            <h2 className="font-display text-3xl mb-4">Seamless Integrations</h2>
-            <p className="text-muted-foreground">We work with the tools you already use to keep your business running smoothly.</p>
-          </Reveal>
-        </div>
-        <div className="flex gap-12 whitespace-nowrap animate-marquee items-center opacity-70 hover:opacity-100 transition-opacity duration-500">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <div key={i} className="flex gap-16 pr-16 items-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/QuickBooks_logo.svg" alt="QuickBooks" className="h-8 grayscale hover:grayscale-0 transition-all" />
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Xero_software_logo.svg/1200px-Xero_software_logo.svg.png" alt="Xero" className="h-8 grayscale hover:grayscale-0 transition-all" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gusto_logo_2019.svg/2560px-Gusto_logo_2019.svg.png" alt="Gusto" className="h-8 grayscale hover:grayscale-0 transition-all" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/2560px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe" className="h-8 grayscale hover:grayscale-0 transition-all" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/cb/Square_icon.svg/1200px-Square_icon.svg.png" alt="Square" className="h-8 grayscale hover:grayscale-0 transition-all" />
-            </div>
-          ))}
-        </div>
-      </section>
+
 
       {/* Bento Grid Services Section */}
       <section className="bg-sand py-32 border-y border-border">
