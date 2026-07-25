@@ -184,14 +184,17 @@ function HomePage() {
 
             {/* Standard Service 1 */}
             <Link to="/services/reconciliation" className="relative rounded-3xl overflow-hidden group card-tilt bg-brand-deep text-cream p-8 flex flex-col">
-              <div className="mb-auto">
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                <img src="/images/bank_reconciliation.jpg" alt="Bank & Card Reconciliation" className="w-full h-full object-cover" />
+              </div>
+              <div className="relative z-10 mb-auto">
                 <div className="h-12 w-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6 text-accent">
                   <Shield className="h-6 w-6" />
                 </div>
                 <h3 className="font-display text-2xl mb-2">Bank & Card Reconciliation</h3>
                 <p className="text-cream/70 text-sm">Every single transaction matched against your statements. Errors caught early, guaranteed.</p>
               </div>
-              <div className="mt-8 flex justify-between items-center group-hover:text-accent transition-colors">
+              <div className="relative z-10 mt-8 flex justify-between items-center group-hover:text-accent transition-colors">
                 <span className="text-sm font-semibold">Explore</span>
                 <ArrowUpRight className="h-5 w-5" />
               </div>
