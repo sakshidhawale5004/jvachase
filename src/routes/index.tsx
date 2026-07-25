@@ -198,30 +198,36 @@ function HomePage() {
             </Link>
 
             {/* Standard Service 2 */}
-            <Link to="/services/financial-statements" className="relative rounded-3xl overflow-hidden group card-tilt bg-card border border-border p-8 flex flex-col">
-              <div className="mb-auto">
-                <div className="h-12 w-12 rounded-xl bg-brand/5 flex items-center justify-center mb-6 text-brand">
+            <Link to="/services/financial-statements" className="relative rounded-3xl overflow-hidden group card-tilt bg-brand-deep text-cream p-8 flex flex-col">
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                <img src="/images/financial_statements.jpg" alt="Financial Statements" className="w-full h-full object-cover" />
+              </div>
+              <div className="relative z-10 mb-auto">
+                <div className="h-12 w-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6 text-accent">
                   <TrendingUp className="h-6 w-6" />
                 </div>
                 <h3 className="font-display text-2xl mb-2">Financial Statements</h3>
-                <p className="text-muted-foreground text-sm">Monthly P&L, balance sheet, and cash flow—delivered on time, every time.</p>
+                <p className="text-cream/70 text-sm">Monthly P&L, balance sheet, and cash flow—delivered on time, every time.</p>
               </div>
-              <div className="mt-8 flex justify-between items-center text-brand group-hover:translate-x-1 transition-transform">
+              <div className="relative z-10 mt-8 flex justify-between items-center group-hover:text-accent transition-colors">
                 <span className="text-sm font-semibold">Explore</span>
                 <ArrowUpRight className="h-5 w-5" />
               </div>
             </Link>
 
             {/* Standard Service 3 (AP & AR) */}
-            <Link to="/services/ap-ar" className="relative rounded-3xl overflow-hidden group card-tilt bg-card border border-border p-8 flex flex-col">
-              <div className="mb-auto">
-                <div className="h-12 w-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 text-accent">
+            <Link to="/services/ap-ar" className="relative rounded-3xl overflow-hidden group card-tilt bg-brand-deep text-cream p-8 flex flex-col">
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                <img src="/images/ap_ar_services.jpg" alt="AP & AR" className="w-full h-full object-cover" />
+              </div>
+              <div className="relative z-10 mb-auto">
+                <div className="h-12 w-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6 text-accent">
                   <FileCheck className="h-6 w-6" />
                 </div>
                 <h3 className="font-display text-2xl mb-2">AP & AR</h3>
-                <p className="text-muted-foreground text-sm">Stay on top of what you owe and what's owed to you without the manual data entry.</p>
+                <p className="text-cream/70 text-sm">Stay on top of what you owe and what's owed to you without the manual data entry.</p>
               </div>
-              <div className="mt-8 flex justify-between items-center text-accent group-hover:translate-x-1 transition-transform">
+              <div className="relative z-10 mt-8 flex justify-between items-center group-hover:text-accent transition-colors">
                 <span className="text-sm font-semibold">Explore</span>
                 <ArrowUpRight className="h-5 w-5" />
               </div>

@@ -54,13 +54,7 @@ export function SiteFooter() {
             </ul>
           </div>
         </div>
-        
-        {/* Giant Typography Brand Name */}
-        <div className="py-12 overflow-hidden flex justify-center border-b border-cream/5">
-          <h2 className="font-display text-[12vw] leading-none font-bold text-white/[0.03] select-none whitespace-nowrap">
-            JVA CHASE BOOKKEEPING
-          </h2>
-        </div>
+
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-xs text-white/40">
           <span>© {new Date().getFullYear()} JVA Chase Bookkeeping. All rights reserved.</span>
